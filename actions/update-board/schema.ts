@@ -7,5 +7,5 @@ export const UpdateBoard = z.object({
     }).min(3, {
         message: "Title must be at least 3 characters",
     }),
-    id: string(),
+    id: z.string(),
 });
