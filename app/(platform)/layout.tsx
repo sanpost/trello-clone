@@ -1,3 +1,5 @@
+import { ModalProvider } from "@/components/modals/providers/modal-provider";
+import { QueryProvider } from "@/components/modals/providers/query-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "sonner";
 
@@ -8,8 +10,11 @@ const PlatformLayout = ({
 }) => {
     return (
         <ClerkProvider>
-            <Toaster />
-            {children}
+            <QueryProvider>
+                <Toaster />
+                <ModalProvider />
+                {children}
+            </QueryProvider>
         </ClerkProvider>
     );
 };
