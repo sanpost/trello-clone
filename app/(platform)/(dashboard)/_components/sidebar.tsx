@@ -56,8 +56,7 @@ export const Sidebar = ({
         return (
             <>
                 <div className="flex items-center justify-between mb-2">
-                    <Skeleton className="h-10 w-[50%]" />
-                    <Skeleton className="h-10 w-10" />
+                    <Skeleton className="h-10 w-full rounded-full" />
                 </div>
                 <div className="space-y-2">
                     <NavItem.Skeleton />
@@ -71,19 +70,22 @@ export const Sidebar = ({
 
     return (
         <>
-            <div className="font-medium text-xs flex items-center mb-1">
-                <span className="pl-4">
+            <div className="font-medium text-xs flex items-center mb-2 bg-slate-100 w-full rounded-full">
+                <span className="pl-4 font-semibold">
                     Workspaces
                 </span>
-                <Button
-                    type="button"
-                    size="icon"
-                    variant="ghost"
-                    className="ml-auto"
-                >
-                    <Link href="/select-org" />
-                    <Plus className="h-4 w-4" />
-                </Button>
+                <Link 
+                href="/select-org"
+                className="ml-auto">
+                    <Button
+                        type="button"
+                        size="icon"
+                        variant="purple"
+                        className="ml-auto rounded-full"
+                    >
+                        <Plus className="h-4 w-4" />
+                    </Button>
+                </Link>
             </div>
             <Accordion
                 type="multiple"

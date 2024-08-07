@@ -1,4 +1,4 @@
-import { Logo } from "@/components/logo";
+import { LogoDark } from "@/components/logo-dark";
 import { Button } from "@/components/ui/button";
 import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
 import { Plus } from "lucide-react";
@@ -11,7 +11,7 @@ export const Navbar = () => {
             <MobileSidebar />
             <div className="flex items-center gap-x-4">
                 <div className="hidden md:flex">
-                    <Logo />
+                    <LogoDark />
                 </div>
                 <FormPopover align="start" side="bottom" sideOffset={18}>
                     <Button variant="primary" size="sm" className="rounded-sm hidden md:block h-auto py-1.5 px-2">

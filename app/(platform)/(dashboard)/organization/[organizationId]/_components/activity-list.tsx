@@ -1,4 +1,4 @@
-import { ActivityItem } from "@/components/activity-item";
+import { ActivityItemLight } from "@/components/activity-item-light";
 import { Skeleton } from "@/components/ui/skeleton";
 import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs/server";
@@ -26,7 +26,7 @@ export const ActivityList = async () => {
                 No activity found inside this organization.
             </p>
             {auditLogs.map((log) => (
-                <ActivityItem key={log.id} data={log} />
+                <ActivityItemLight key={log.id} data={log} />
             ))}
         </ol>
     );

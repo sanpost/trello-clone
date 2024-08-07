@@ -12,8 +12,8 @@ interface BoardIdLayoutProps {
 
 export async function generateMetadata({
     params,
-} : { params: { boardId: string } }) {
-    const {orgId} = auth();
+}: { params: { boardId: string } }) {
+    const { orgId } = auth();
 
     if (!orgId) {
         return {
@@ -56,16 +56,18 @@ const BoardIdLayout = async ({
     };
 
     return (
-        <div
-        className='relatice h-full bg-no-repeat bg-cover bg-center'
-        style={{backgroundImage: `url(${board.imageFullUrl})` }}>
-            <BoardNavbar 
-            data={board} />
-            <div className='absolute inset-0 bg-black/20'/>
-            <main className="relative pt-28 h-full">
-                {children}
-            </main>
-        </div>
+
+            <div
+                className='relative h-full bg-no-repeat bg-cover bg-center'
+                style={{ backgroundImage: `url(${board.imageFullUrl})` }}>
+                <BoardNavbar
+                    data={board} />
+                <div className='absolute inset-0 bg-black/20' />
+                <main className="relative pt-28 h-full">
+                    {children}
+                </main>
+            </div>
+
     );
 };
 
