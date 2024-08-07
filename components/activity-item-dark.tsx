@@ -29,7 +29,7 @@ export const ActivityItemDark = ({
                 <p className="space-y-4 text-xs text-neutral-700"  >
                     {format(new Date(data.createdAt), "MMM dd, yyyy 'at' hh:mm a")}
                 </p>
-                <ChevronDownCircleIcon className="w-4 h-4 text-neutral-200/70 ml-2" />
+                <ChevronDownCircleIcon className="w-4 h-4 text-neutral-700/70 ml-2" />
             </div>
 
         </li>

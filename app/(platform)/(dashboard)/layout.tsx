@@ -6,7 +6,7 @@ const DashboardLayout = (
 ) => {
     return (
         <div className="bg-gradient-to-b from-sky-700 to-purple-700 min-h-full">
-            <div className="min-h-full">
+            <div className="h-full">
                 <Navbar />
                 {children}
             </div>
