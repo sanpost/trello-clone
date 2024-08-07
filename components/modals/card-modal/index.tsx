@@ -9,7 +9,7 @@ import { Header } from "./header";
 import { Description } from "./description";
 import { Actions } from "./actions";
 import { AuditLog } from "@prisma/client";
-import { Activity } from "./activity";
+import { ActivityDark } from "./activity-dark";
 
 export const CardModal = () => {
     const id = useCardModal((state) => state.id);
@@ -27,7 +27,7 @@ export const CardModal = () => {
     });
 
     return (
-        <Dialog
+        <Dialog 
             open={isOpen}
             onOpenChange={onClose}
         >
@@ -44,8 +44,8 @@ export const CardModal = () => {
                                 : <Description data={cardData} />
                             }
                             {!auditLogsData
-                                ? <Activity.Skeleton />
-                                : <Activity items={auditLogsData} />
+                                ? <ActivityDark.Skeleton />
+                                : <ActivityDark items={auditLogsData} />
                             }
                         </div>
                     </div>

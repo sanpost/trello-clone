@@ -65,16 +65,17 @@ export const NavItem = ({
             <AccordionTrigger
                 onClick={() => onExpand(organization.id)}
                 className={cn(
-                    "flext items-center gap-x-2 p-1.5 text-neutral-700 rounded-md hover:bg-neutral-500/10 transition text-start np-underline hover:no-underline",
-                    isActive && !isExpanded && "bg-sky-500/10 text-sky-700"
+                    "flext items-center gap-x-2 p-1.5 bg-slate-100 text-neutral-800 rounded-3xl hover:bg-purple-200 transition-all duration-1000 text-start np-underline hover:no-underline",
+                    isActive && !isExpanded && "bg-purple-200 text-neutral-800",
+                    isExpanded && "rounded-b-none rounded-t-3xl transition"
                 )}>
-                <div className="flex items-center gap-x-4">
+                <div className="flex items-center gap-x-4 rounded-none">
                     <div className="w-7 h-7 relative">
                         <Image
                             fill
                             src={organization.imageUrl}
                             alt="Organization"
-                            className="rounded-sm object-cover"
+                            className="rounded-full object-cover"
                         />
                     </div>
                     <span className="font-medium text-sm">
@@ -82,37 +83,32 @@ export const NavItem = ({
                     </span>
                 </div>
             </AccordionTrigger>
-            <AccordionContent className="pt-1 text-neutral-700">
+            <AccordionContent className="pt-1.5 text-neutral-800 bg-slate-100 rounded-b-3xl">
                 {routes.map((route) => (
-                    <Button 
-                    key={route.href}
-                    size="sm"
-                    onClick={() => onClick(route.href)}
-                    className={cn(
-                        "w-full font-normal justify-start pl-10 mb-1",
-                        pathname === route.href && "text-sky-500/10 text-sky-700"
-                        
-                    )} 
-                    variant="ghost"
+                    <Button
+                        key={route.href}
+                        size="sm"
+                        onClick={() => onClick(route.href)}
+                        className={cn(
+                            "w-full font-normal justify-start pl-10 mb-1 rounded-t-sm",
+                            pathname === route.href && "text-purple-700"
+
+                        )}
+                        variant="purple"
                     >
                         {route.icon}
                         {route.label}
                     </Button>
                 ))}
-
             </AccordionContent>
-
         </AccordionItem>
     );
 };
 
 NavItem.Skeleton = function SkeletonNavItem() {
-    return(
-        <div className="flex items-center gap-x-2">
-            <div className="w-10 h-10 relative shrink-0">
-                <Skeleton className="h-full w-full absolute"/>
-            </div>
-        <Skeleton className="h-10 w-full"/>
+    return (
+        <div className="flex items-center justify-between mb-2">
+            <Skeleton className="h-10 w-full rounded-full" />
         </div>
     );
 }

@@ -10,9 +10,8 @@ const ActivityPage = async () => {
     const isPro = await checkSubscription();
     
     return (
-        <div className="w-full">
+        <div className="w-full space-y-8 md:p-10 p-5"> 
             <Info isPro={isPro}/>
-            <Separator className="my-2" />
             <Suspense fallback={<ActivityList.Skeleton />}>
                 <ActivityList />
             </Suspense>

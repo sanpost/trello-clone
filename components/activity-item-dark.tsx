@@ -2,17 +2,19 @@ import { AuditLog } from "@prisma/client";
 import { generateLogMessage } from "@/lib/generate-log-message";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { format } from "date-fns";
+import { ChevronDownCircleIcon } from "lucide-react";
 
-interface ActivityItemProps {
+interface ActivityItemDarkProps {
     data: AuditLog;
 }
 
-export const ActivityItem = ({
+export const ActivityItemDark = ({
     data,
-}: ActivityItemProps) => {
+}: ActivityItemDarkProps) => {
+    
     return (
-        <li className="flex items-center gap-x-2">
-            <Avatar className="h-8w-8">
+        <li className="flex items-center gap-x-2 ">
+            <Avatar className="h-8 w-8">
                 <AvatarImage src={data.userImage} />
             </Avatar>
             <div className="flex flex-col space-y-0.5">
@@ -21,9 +23,13 @@ export const ActivityItem = ({
                         {data.userName}
                     </span> {generateLogMessage(data)}
                 </p>
-                <p className="mt-2 space-y-4 text-xs text-muted-foreground"  >
+
+            </div>
+            <div className="flex items-end flex-row ml-auto">
+                <p className="space-y-4 text-xs text-neutral-700"  >
                     {format(new Date(data.createdAt), "MMM dd, yyyy 'at' hh:mm a")}
                 </p>
+                <ChevronDownCircleIcon className="w-4 h-4 text-neutral-700/70 ml-2" />
             </div>
 
         </li>

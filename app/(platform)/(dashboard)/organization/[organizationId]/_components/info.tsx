@@ -24,7 +24,7 @@ export const Info = ({
 
     return (
         <div className="flex items-center gap-x-4">
-            <div className="w-[60px] h-[60px] relative">
+            <div className="w-[50px] h-[50px] relative">
                 <Image
                     fill
                     src={organization?.imageUrl!}
@@ -33,10 +33,10 @@ export const Info = ({
                 />
             </div>
             <div className="space-y-1">
-                <p className="font-semibold text-xl">
+                <p className="font-semibold text-xl text-slate-100">
                     {organization?.name}
                 </p>
-                <div className="flex items-center text-xs text-muted-foreground">
+                <div className="flex items-center text-xs text-slate-100/80">
                     <CreditCard className="h-3 w-3 mr-1" />
                     {isPro ? "Pro" : "Free"}
                 </div>
