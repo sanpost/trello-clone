@@ -1,6 +1,9 @@
 # Trello Clone
 This project is a clone of the popular task management tool, Trello.
 
+## Live Demo
+You can view the live demo of the project [here](https://trello-clone-seven-lake.vercel.app/).
+
 ### Features
 - Organization creation: Create and manage organizations using Clerk.
 - Personal boards: Set up your own boards to manage tasks.
