@@ -62,7 +62,7 @@ export const BoardList = async () => {
                     </div>
                 </FormPopover>
                 {board.map((board) => (
-                    <div className="flex items-start flex-col">
+                    <div key={board.id} className="flex items-start flex-col">
                         <p className="relative text-slate-50/70 text-xs pb-1">
                             {format(new Date(board.createdAt), "MMM dd, yyyy")}
                         </p>
